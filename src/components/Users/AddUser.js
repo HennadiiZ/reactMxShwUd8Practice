@@ -8,10 +8,23 @@ const AddUser = (props) => {
   const [enteredUsername, setEnteredUsername] = useState('');
   const [enteredUserAge, setEnteredUserAge] = useState('');  
 
+//   let allertMessage = '';
+
   const addUserHandler = (event) => {
     event.preventDefault();
     // console.log(event.target);
+    if (enteredUsername.trim().length === 0 || enteredUserAge.trim().length === 0) {
+    //   allertMessage = 'Invalid Data!';
+      return;
+    }
+    if (+enteredUserAge < 1) {
+    //   allertMessage = 'age must be greater that zero.';
+      return;
+    }
     console.log(enteredUsername, enteredUserAge);
+    // allertMessage = '';
+    setEnteredUsername('');
+    setEnteredUserAge('');
   };
 
   const usernameChangeHandler = (event) => {
@@ -32,6 +45,7 @@ const AddUser = (props) => {
         <input 
           id="username" 
           type="text" 
+          value={enteredUsername}
           onChange={usernameChangeHandler}
         />
   
@@ -39,6 +53,7 @@ const AddUser = (props) => {
         <input 
           id="age" 
           type="number"
+          value={enteredUserAge}
           onChange={userAgeChangeHandler}
         />
   
