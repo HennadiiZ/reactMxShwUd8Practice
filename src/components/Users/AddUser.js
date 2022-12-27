@@ -22,7 +22,10 @@ const AddUser = (props) => {
       return;
     }
     console.log(enteredUsername, enteredUserAge);
+
+    props.onAddUser(enteredUsername, enteredUserAge);
     // allertMessage = '';
+
     setEnteredUsername('');
     setEnteredUserAge('');
   };
