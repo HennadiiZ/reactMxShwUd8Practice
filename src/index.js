@@ -22,3 +22,5 @@ root.render(<App />);
 // 096 Managing a List Of Users via State
 
 // 097 Adding The _ErrorModal_ Component
+
+// 098 Managing the Error State
